@@ -4,6 +4,21 @@
 - Connection To Mongodb Using Mongoose
 - Using a CSS Framework
 
+## To Run
+
+```
+cd myblogapp && npm install
+
+# to start with nodemon - linux/macosx
+
+npm run debug
+
+# to start with nodemon - windows
+
+npm run windows
+```
+
+
 
 ## To Do
 

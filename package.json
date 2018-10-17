@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "debug": "DEBUG=myblogapp:* nodemon ./bin/www",
     "windows": "set DEBUG=app:* | nodemon ./bin/www"
   },
