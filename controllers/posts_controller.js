@@ -52,7 +52,7 @@ exports.show = function(req, res, next) {
 
 exports.new = function(req, res, next) {
 	let post = posts[0];
-	res.render('posts/show', { title: post.title, post: post });
+	res.render('posts/create', { title: post.title, post: post });
 };
 
 // exports.new = function (req, res, next) {
