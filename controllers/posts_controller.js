@@ -38,23 +38,31 @@ var posts = [
   }]
 
 
-  // Displays a list of all blog posts
-  exports.index = function(req, res, next) {
-		let newPost = new PostModel({
-			title: 'This is a new post!'
-		});
-		newPost.save()
-			.then(post => console.log("post", post))
-			.catch(err => console.log("err", err));
-		res.render('posts/index', { title: "Blog", posts: posts });
-  };
+// Displays a list of all blog posts
+exports.index = function(req, res, next) {
+	res.render('posts/index', { title: "Blog", posts: posts });
+};
 
-// /blogs/:slug
+// /blog/:slug
 // req.params.slug
-  exports.show = function(req, res, next) {
-    let post = posts.filter(x => x['slug'] === req.params['slug'])[0]
-    console.log(post['title'])
-    res.render('posts/show', { title: post['title'], post: post });
-  };
+exports.show = function(req, res, next) {
+	let post = posts.filter(x => x['slug'] === req.params['slug'])[0];
+	res.render('posts/show', { title: post['title'], post: post });
+};
 
+exports.new = function(req, res, next) {
+	let post = posts[0];
+	res.render('posts/show', { title: post.title, post: post });
+};
 
+// exports.new = function (req, res, next) {
+// 	console.log('here')
+// 	res.render('posts/create', { title: "New Post", test: 'hello'});
+// };
+
+exports.create = function (req, res, next) {
+	console.log(req);
+	let post = posts[0];
+	res.render('posts/show', {title: post.title, post: post});
+	// let newPost = new PostModel.create(req.post)
+};

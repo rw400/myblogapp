@@ -3,12 +3,19 @@ var router = express.Router();
 var postsController = require('../controllers/posts_controller');
 
 // GET all posts listings.
-// /blog/
-router.get('/', postsController.index)
+// GET /blog/
+router.get('/', postsController.index);
 
 // Get an Individual post listing
 
-// /blog/:slug
-router.get('/:slug', postsController.show)
+// GET /blog/:slug
+router.get('/:slug', postsController.show);
 
+// Create posts
+// GET /blog/new
+router.get('/new', postsController.new);
+// POST /blog
+router.post('/new', postsController.create);
+
+// Export routes
 module.exports = router;
