@@ -51,8 +51,8 @@ exports.show = function(req, res, next) {
 };
 
 exports.new = function(req, res, next) {
-	let post = posts[0];
-	res.render('posts/create', { title: post.title, post: post });
+	// let post = posts[0];
+	res.render('posts/create', { title: 'New Blog Post' });
 };
 
 // exports.new = function (req, res, next) {
