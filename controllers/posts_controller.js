@@ -1,5 +1,4 @@
-// Temporary variable posts available for views
-// ToDo: Replace posts & post with a Mongoose Model
+let PostModel = require('../models/post');
 
 var posts = [
   { title: "My First Blog Post",
@@ -41,9 +40,17 @@ var posts = [
 
   // Displays a list of all blog posts
   exports.index = function(req, res, next) {
-    res.render('posts/index', { title: "Blog", posts: posts });
+		let newPost = new PostModel({
+			title: 'This is a new post!'
+		});
+		newPost.save()
+			.then(post => console.log("post", post))
+			.catch(err => console.log("err", err));
+		res.render('posts/index', { title: "Blog", posts: posts });
   };
 
+// /blogs/:slug
+// req.params.slug
   exports.show = function(req, res, next) {
     let post = posts.filter(x => x['slug'] === req.params['slug'])[0]
     console.log(post['title'])
