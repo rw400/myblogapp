@@ -1,10 +1,11 @@
 let mongoose = require('mongoose');
 
-const server = 'localhost:27017';
-const dbName = 'dbdata';
+const server = 'ds137483.mlab.com:37483';
+const dbName = 'gbc-blogapp-db';
+const user = 'priom-gbc';
+const password = 'priom-gbc1';
 
-// const connectionString = "mongodb://" + server + "/" + dbName;
-const connectionString = `mongodb://${server}/${dbName}`;
+const connectionString = `mongodb://${user}:${password}@${server}/${dbName}`;
 
 const connect = () => {
 	mongoose.connect(connectionString)
