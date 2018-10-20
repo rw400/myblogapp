@@ -52,7 +52,7 @@ exports.show = function(req, res, next) {
 
 exports.new = function(req, res, next) {
 	// let post = posts[0];
-	res.render('posts/create', { title: 'New Blog Post' });
+	res.render('posts/new', { title: 'New Blog Post' });
 };
 
 // exports.new = function (req, res, next) {
@@ -61,8 +61,8 @@ exports.new = function(req, res, next) {
 // };
 
 exports.create = function (req, res, next) {
-	console.log(req);
+	console.log("req");
 	let post = posts[0];
-	res.render('posts/show', {title: post.title, post: post});
-	// let newPost = new PostModel.create(req.post)
+    res.render('posts/show', { title: post['title'], post: post });
+    // let newPost = new PostModel.create(req.post)
 };
