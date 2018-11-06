@@ -36,7 +36,6 @@ exports.create = function (req, res, next) {
         if (err) {
             return res.status(500).send(err);
         }
-
         return res.render('/')
     })
 };
