@@ -10,6 +10,7 @@ router.get('/new', postsController.new);
 router.get('/', postsController.index);
 
 // Get an Individual post listing
+router.get('/blog', postsController.show);
 
 // GET /blog/:slug
 router.get('/:slug', postsController.show);
@@ -18,7 +19,11 @@ router.get('/:slug', postsController.show);
 // POST /blog
 router.post('/', postsController.create);
 // TODO: Add Edit and Delete Requests
+router.post('/blog', postsController.create);
 
+router.delete('/blog', postsController.delete);
+
+router.put('blog', postsController.update);
 
 // Export routes
 module.exports = router;

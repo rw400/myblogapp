@@ -1,0 +1,14 @@
+<!-- contains a partial for an individual blog page -->
+
+<h1><%= post['title'] %></h1>
+<a href="/blog"><h3>blog post</h3></a>
+<p>
+  <%= post['content'] %>
+</p>
+<p>
+  <%= post['created_at'] %>
+</p>
+<!-- Adds the title to the layout  - see EJS Layouts -->
+<%- contentFor('title') %>
+<%= post['title'] %>
+All Articles
